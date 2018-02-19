@@ -1,0 +1,80 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+
+int main() {
+  int t;
+    cin>>t;
+    while(t--)
+    {
+        long long s1;
+        cin>>s1;
+        
+        
+        long long k=1000000007;
+        
+        long long a,b,c;
+        
+        
+        if(s1%3==0)
+        {
+            a=s1/3;
+            b=s1/3;
+            c=s1/3;
+            
+            a=a%k;
+            b=b%k;
+            c=c%k;
+            
+            s1=(a*b)%k;
+            s1=(s1*c)%k;
+            
+            cout<<s1<<endl;
+            
+                
+        }
+        
+      else if(s1%3==1)
+        {
+             a=(s1/3)+1;
+            b=s1/3;
+            c=s1/3;
+            
+   
+            
+            
+            a=a%k;
+            b=b%k;
+            c=c%k;
+            
+            s1=(a*b)%k;
+            s1=(s1*c)%k;
+            cout<<s1<<endl;
+            
+            
+        }
+        
+        
+           
+       else if(s1%3==2)
+        {
+            a=(s1/3)+1;
+            b=(s1/3)+1;
+            c=s1/3;
+            
+            a=a%k;
+            b=b%k;
+            c=c%k;
+            
+            s1=(a*b)%k;
+            s1=(s1*c)%k;
+            cout<<s1<<endl;
+        }
+        
+        
+      
+    }
+    return 0;
+}
