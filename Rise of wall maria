@@ -1,0 +1,29 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+  int t;
+    cin>>t;
+    
+    while(t--)
+    {
+        long long a;
+        cin>>a;
+        long long res;
+        res=0;
+        for(long long i=1;i>0;i++)
+        {
+            if(i*(i+1)<=2*a)
+            res=i;
+            else 
+                break;
+        }
+        cout<<res<<endl;
+    }
+    return 0;
+}
