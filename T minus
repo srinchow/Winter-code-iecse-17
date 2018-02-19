@@ -1,0 +1,50 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int gcd(int a, int b)
+{
+    
+    if (a == 0 || b == 0)
+       return 0;
+ 
+    
+    if (a == b)
+        return a;
+ 
+    
+    if (a > b)
+        return gcd(a-b, b);
+    return gcd(a, b-a);
+}
+
+
+int main() {
+    int t;
+    cin>>t;
+    
+    while(t--)
+    {
+        long long n1, n2, max;
+
+  
+    cin >> n1 >> n2;
+    
+  
+ long long k = gcd(n1,n2);
+        
+        max=n1*n2/k;
+        
+        cout<<max<<endl;
+        
+    
+        
+}
+    return 0;
+    }
+   
+        
+        
+     
