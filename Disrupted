@@ -1,0 +1,118 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+void reverse_string(char str[])
+{
+    char c;
+    char *p, *q;
+
+    p = str;
+    if (!p)
+        return;
+
+    q = p + 1;
+    if (*q == '\0')
+        return;
+
+    c = *p;
+    reverse_string(q);
+
+    while (*q != '\0') {
+        *p = *q;
+        p++;
+        q++;
+    }
+    *p = c;
+
+    return;
+}
+
+
+
+
+
+int main()
+{int t;
+ cin>>t;
+ while(t--)
+ { long long dec,dec2;
+   cin >>dec;
+   cin>>dec2;
+
+    char bin32[]  = "00000000000000000000000000000000";
+    char pin32[]  = "00000000000000000000000000000000";
+    char a[32];
+    char b[32];
+    
+  
+  
+   for (int pos = 31; pos >= 0; --pos)
+    {
+        if (dec % 2) 
+            bin32[pos] = '1';
+        dec /= 2;
+    }
+
+
+    
+    for (int pos = 31; pos >= 0; --pos)
+    {
+        if (dec2 % 2) 
+            pin32[pos] = '1';
+        dec2 /= 2;
+    }
+ 
+    
+    
+    
+    reverse_string(bin32);
+    reverse_string(pin32);
+      
+    
+    
+    char res[32];
+    
+  /*  for (int pos=0; pos<32;pos++)
+    {
+        if(bin32[pos]=='1'&&pin32[pos]=='1')
+            res[pos]='2';
+         
+        else if(bin32[pos]=='0'&&pin32[pos]=='1'||bin32[pos]=='1'&&pin32[pos]=='0')
+            res[pos]='1';
+        else
+            res[pos]='0';
+    
+    }*/
+    
+    
+    long long sum=0;
+    
+    for (int pos = 0; pos < 32; pos++)
+    {
+        if(bin32[pos]=='1')
+            sum=sum+pow(2,32-pos-1);
+         
+        else if(res[pos]=='0')
+            sum=sum+0*pow(2,32-pos-1);
+    }
+  
+  
+    for (int pos = 0; pos < 32; pos++)
+    {
+        if(pin32[pos]=='1')
+            sum=sum+pow(2,32-pos-1);
+         
+        else if(pin32[pos]=='0')
+            sum=sum+0*pow(2,32-pos-1);
+    }
+  
+  
+    
+    cout<<sum<<endl;
+    
+    
+}  
+    
+     return 0;
+}
