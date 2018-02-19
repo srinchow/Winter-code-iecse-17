@@ -1,0 +1,8 @@
+#this was a easy question to tried to do in python with a one liner.
+import string
+def to_camel_case(s):
+    return s[0].lower() + string.capwords(s, sep='_').replace('_', '')[1:] if s else s
+
+a=input();
+
+print(to_camel_case(a));
