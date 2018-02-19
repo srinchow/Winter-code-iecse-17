@@ -1,0 +1,112 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+long long A(long long x)
+{ return x*(x+1)/2;}
+long long B(long long x)
+{ return x*(3*x-1)/2;}
+long long C(long long x)
+{ return x*(2*x-1);}
+
+int main() {
+    long long M,N,a,b;
+    
+    cin>>M>>N>>a>>b;
+    if(a==5)
+    {
+        long long int i=1,j=1,t1=1,t2=1;
+     
+     
+     while(t1<=M)
+     {
+         i++;
+         t1=B(i);
+     }
+        
+     
+     while(t2<=M)
+     {
+         j++;
+         t2=C(j);
+     }
+        
+        
+     
+     while(t1<N&&t2<N)
+     {
+         t1=B(i);
+         t2=C(j);
+           
+         
+         
+        if(t1==t2)
+        {   cout<<t1<<endl;
+          i++;
+         j++;
+        
+        
+        }
+         
+     
+        
+        if(t1<t2)
+        {  i++;
+         }
+        if(t1>t2)
+        {j++;
+         
+        }
+     
+        
+      }
+        
+    }
+    
+    if(a==3)
+    { long long int i=1,j=1,t1=1,t2=1;
+     
+     
+     while(t1<=M)
+     {
+         i++;
+         t1=A(i);
+     }
+     
+     while(t2<=M)
+     {
+         j++;
+         t2=B(j);
+     }
+     
+     while(t1<N&&t2<N)
+     {
+         t1=A(i);
+         t2=B(j);
+         
+       
+         
+         if(t1==t2)
+         {   cout<<t1<<endl; 
+         i++;
+         j++;
+         }
+     
+      else if(t1<t2)
+            i++;
+        else
+            j++;
+     
+     
+     
+     
+    }
+     
+    }
+    
+    return 0;
+}
